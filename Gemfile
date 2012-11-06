@@ -12,6 +12,7 @@ gem 'chosen-rails'
 gem 'nifty-generators'
 gem 'roadie'
 gem 'twitter-bootstrap-rails'
+gem "faraday", "~> 0.8.4"
 #gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git', :ref => '5269f0022179ef442820a124dae4da8f06275010'
 
 gem 'sass-rails', '3.2.4'

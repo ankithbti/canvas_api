@@ -1,18 +1,38 @@
 class StudentsController < ApplicationController
 
+  require 'faraday'
+  require 'net/http'
+  require 'net/https'
 
   def index
     @students = Student.all
-    uri = URI.parse("https://localhost//api/v1/accounts?access_token=GtEXBYtduzmZbhrB6SHTSEqWZ3GhpORGIsArBzh6MyuGtJeVYBo4FcjX1BAemzpV")
+    access_token = "access_token=GtEXBYtduzmZbhrB6SHTSEqWZ3GhpORGIsArBzh6MyuGtJeVYBo4FcjX1BAemzpV"
+    fdn = "https://localhost//api/v1/accounts/2/courses?" + access_token
+    
+    # To get account details
+    uri = URI.parse(fdn)
+
+    
+    ### General HTTP Request
     http = Net::HTTP.new(uri.host, uri.port)
-    http.use_ssl = true
+    http.use_ssl = (uri.scheme == 'https')
     http.verify_mode = OpenSSL::SSL::VERIFY_NONE
 
+    #--------------------GET REq
     request = Net::HTTP::Get.new(uri.request_uri)
     response = http.request(request)
-    #raise response.body
-    @result = JSON.parse(response.body)
+    raise response.to_yaml
+    #-----End Get----------------
+    #Save Cookies-------
+    # cookie = response.response['set-cookie']
+    #---------
     
+    #Working Post------
+    # req = Net::HTTP::Post.new(uri.path + '?' + access_token)
+    # req.set_form_data({'account_id'=>'2', 'course[name]' => 'ByPOSTCourse'})
+    # res = http.request(req)
+    #-----------End of Post--------
+ 
   end
 
   def show
