@@ -1,0 +1,12 @@
+<% title "Get Access Token" %>
+
+<p>
+  <strong>Token:</strong>
+  <%= @get_access_token.token %>
+</p>
+
+<p>
+  <%= link_to "Edit", edit_get_access_token_path(@get_access_token) %> |
+  <%= link_to "Destroy", @get_access_token, :confirm => 'Are you sure?', :method => :delete %> |
+  <%= link_to "View All", get_access_tokens_path %>
+</p>

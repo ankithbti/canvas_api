@@ -34,4 +34,13 @@ CanvasApi::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  ENV['ACCESS_TOKEN'] = "GtEXBYtduzmZbhrB6SHTSEqWZ3GhpORGIsArBzh6MyuGtJeVYBo4FcjX1BAemzpV"
+  ENV['DEVELOPER_KEY'] = "BamAYFq5SOKHcK6cCNWAil9rOfK5G49kKT6ZBWm4JWkHtCZYbz6xmNCxT09gwarF"
+  ENV['GET_DATA'] = "client_id=2&response_type=code&redirect_uri=http://localhost:3000/get_access_tokens" 
+  ENV['FDN_LINK'] = "https://localhost//login/oauth2/auth?"
+  ENV['CLIENT_ID'] = "2"
+  ENV['CODE_TYPE'] = "code"
+  ENV['REDIRECT_URI'] = "http://localhost:3000/get_access_tokens"
+  ENV['POST_FDN_LINK'] = "https://localhost/login/oauth2/token"
 end

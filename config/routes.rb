@@ -1,4 +1,6 @@
 CanvasApi::Application.routes.draw do
+  resources :get_access_tokens
+
   resources :students
 
   root :to => 'students#index'

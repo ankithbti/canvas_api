@@ -6,7 +6,8 @@ class StudentsController < ApplicationController
 
   def index
     @students = Student.all
-    access_token = "access_token=GtEXBYtduzmZbhrB6SHTSEqWZ3GhpORGIsArBzh6MyuGtJeVYBo4FcjX1BAemzpV"
+    @fdn =  ENV['FDN_LINK'] + ENV['GET_DATA']
+    access_token = "access_token=" + ENV['ACCESS_TOKEN']
     fdn = "https://localhost//api/v1/accounts/2/courses?" + access_token
     
     # To get account details
@@ -31,6 +32,7 @@ class StudentsController < ApplicationController
     # req = Net::HTTP::Post.new(uri.path + '?' + access_token)
     # req.set_form_data({'account_id'=>'2', 'course[name]' => 'ByPOSTCourse'})
     # res = http.request(req)
+    #raise res.to_yaml
     #-----------End of Post--------
  
   end

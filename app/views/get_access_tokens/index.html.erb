@@ -1,0 +1,16 @@
+
+<table>
+  <tr>
+    <th>Token</th>
+  </tr>
+  <% for get_access_token in @get_access_tokens %>
+    <tr>
+      <td><%= get_access_token.token %></td>
+      <td><%= link_to "Show", get_access_token %></td>
+      <td><%= link_to "Edit", edit_get_access_token_path(get_access_token) %></td>
+      <td><%= link_to "Destroy", get_access_token, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New Get Access Token", new_get_access_token_path %></p>
